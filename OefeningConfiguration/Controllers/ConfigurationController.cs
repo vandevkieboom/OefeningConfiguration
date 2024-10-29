@@ -32,6 +32,7 @@ namespace OefeningConfiguration.Controllers
         {
             var applicationSettings = new ApplicationSettings();
             _configuration.GetSection(ApplicationSettings.SectionName).Bind(applicationSettings);
+            //var applicationSettings = _configuration.GetSection(ApplicationSettings.SectionName).Get<ApplicationSettings>();
 
             return Ok(new { applicationSettings.AppName, applicationSettings.Version, applicationSettings.MaxUsers });
         }
